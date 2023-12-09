@@ -35,4 +35,4 @@ Our goal is to provide a user-friendly program that enhances the convenience of 
 
 ## Contributing
 
-Feel free to contribute to the project or use the code for your applications! Happy coding!
+Feel free to contribute to the project or use the code for your applications!
