@@ -1,24 +1,27 @@
 # Show Me The Highway
 
-This is a mini project leveraging OpenCV for real-time analysis of highway traffic conditions using data provided by the National Transport Information Center.
+A mini project using OpenCV for real-time analysis of highway traffic conditions with data provided by the National Transport Information Center.
 
 ## Main Goal
 
-+ Retrieve API data from the National Transport Information Center's CCTV system.
-    + [API Manual](https://www.its.go.kr/opendata/)
-+ Analyze the number of vehicles in CCTV videos using OpenCV.
-+ Transmit the analyzed information to a mobile app and visualize both the video stream and density of detected vehicles.
+- Retrieve CCTV data from the National Transport Information Center using their [API](https://www.its.go.kr/opendata/).
+- Analyze vehicle density in CCTV videos using OpenCV.
+- Transmit analyzed information to a mobile app for visualizing both the video stream and detected vehicle density.
 
 ## How to Use
 
-If you wish to use this program, you must obtain an API key. Follow these steps to apply for the CCTV image API key [here](https://www.its.go.kr/user/issueAuthKey?service=OPD_00000003).
+To use the program:
 
-You can also use 'test' as a placeholder for the API key during testing.
+1. Obtain an API key by following the [API application process](https://www.its.go.kr/user/issueAuthKey?service=OPD_00000003).
+2. Create an "apiKey.txt" file in the `datafiles` folder.
+3. Paste the API key into the "apiKey.txt" file.
+
+During testing, you can use 'test' as a placeholder for the API key.
 
 <details>
 <summary>How to Apply for API?</summary>
 
-You can obtain the API key by specifying the purpose, usage, and desired services.
+Obtain the API key by specifying the purpose, usage, and desired services.
 
 ![Check the CCTV image](images/api_tutorial_1.png)
 
@@ -26,10 +29,10 @@ You can obtain the API key by specifying the purpose, usage, and desired service
 ![Purpose options](images/api_tutorial_2.png)
 </details>
 
-After obtaining the API key, create an "apiKey.txt" file in the `datafiles` folder and paste the API key into the text file.
+## Project Overview
 
-## Project Details
+Our goal is to provide a user-friendly program that enhances the convenience of accessing real-time highway traffic information. Utilizing the Korea Expressway Corporation's free API, we employ OpenCV to analyze images from CCTV cameras along highways. The program responds with user-friendly messages such as "Highway congestion detected" or "Traffic is smooth, proceed at a moderate speed."
 
-Our project aims to enhance the convenience of accessing real-time highway traffic information provided by the Korea Expressway Corporation. By obtaining free data on highway conditions through an approved API key, we use OpenCV to analyze images from CCTV cameras placed along the highways. The program then provides user-friendly responses such as "Currently experiencing highway congestion" or "Traffic is smooth, proceed at a moderate speed."
+## Contributing
 
-Feel free to contribute to the project or use the code for your own applications!
+Feel free to contribute to the project or use the code for your applications! Happy coding!
