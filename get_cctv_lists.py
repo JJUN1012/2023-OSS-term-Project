@@ -87,7 +87,10 @@ def get_cctv_lists():
     return 0
 
 if __name__ == "__main__":
-    get_cctv_lists()
-    print("Done")
+    value = get_cctv_lists()
+    if(value == -1):
+        print("Failed to get cctv lists")
+    else:
+        print("Done")
 
         
