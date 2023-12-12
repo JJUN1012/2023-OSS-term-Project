@@ -31,7 +31,19 @@ Obtain the API key by specifying the purpose, usage, and desired services.
 
 ## Project Overview
 
-Our goal is to provide a user-friendly program that enhances the convenience of accessing real-time highway traffic information. Utilizing the Korea Expressway Corporation's free API, we employ OpenCV to analyze images from CCTV cameras along highways. The program responds with user-friendly messages such as "Highway congestion detected" or "Traffic is smooth, proceed at a moderate speed."
+***Our goal*** is to provide a user-friendly program that enhances the convenience of accessing real-time highway traffic information. Utilizing the Korea Expressway Corporation's free API, we employ OpenCV to analyze images from CCTV cameras along highways. 
+The program responds with user-friendly messages such as "Highway congestion detected" or "Traffic is smooth, proceed at a moderate speed."
+
+## Project Progress
+The process of the program 
+---
+
+1. First get real-time traffic information and highway conditions images through open api
+2. Secondly, the information received through the code is analyzed using opencv.
+3. Third, according to the analysis, the concentration of vehicles in the place is checked and the degree of traffic congestion is notified through the output of the phrase
+4. Increase the convenience of using the highway.
+
+---
 
 ## Contributing
 
