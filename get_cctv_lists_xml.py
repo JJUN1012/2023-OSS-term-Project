@@ -29,10 +29,11 @@ return:
     -1: fail
 '''
 def get_cctv_lists():
-    minX = 127.0740
-    maxX = 127.1636
-    minY = 37.4117
-    maxY = 37.4818
+    minX = 127.1000
+    maxX = 127.1399
+    minY = 37.4321
+    maxY = 37.4575
+
     
     f = open("datafiles/apiKey.txt", 'r')
     api_key = f.readline()
@@ -46,13 +47,13 @@ def get_cctv_lists():
         '&maxX='+ str(maxX) +\
         '&minY='+ str(minY) +\
         '&maxY='+ str(maxY) +\
-        '&getType=json'
+        '&getType=xml'
     
     response = requests.get(api_call)
     
     try:
         # Try to parse the response as XML
-        root = ET.fromstring(response.content)
+        root = ET.fromstring(response.text)
     except ET.ParseError:
         print(f"Failed to parse XML from response: {response.text}")
         return -1
