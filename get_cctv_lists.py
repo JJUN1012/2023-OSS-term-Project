@@ -29,10 +29,10 @@ return:
     -1: fail
 '''
 def get_cctv_lists():
-    minX = 125
-    maxX = 129
-    minY = 33
-    maxY = 39
+    minX = 127.0740
+    maxX = 127.1636
+    minY = 37.4117
+    maxY = 37.4818
     
     f = open("datafiles/apiKey.txt", 'r')
     api_key = f.readline()
