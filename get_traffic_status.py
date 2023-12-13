@@ -11,7 +11,6 @@ def get_how_many_cars(url):
     classes = []
     with open("datafiles/coco.names", "r") as f:
         classes = [line.strip() for line in f]
-    #input url
 
     urllib.request.urlretrieve(url, "datafiles/local_image.jpg")
 
@@ -51,20 +50,17 @@ def get_how_many_cars(url):
     # 겹치는 박스 제거 (Non-maximum suppression)
     indices = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, 0.4)
 
-    # 자동차 개수 출력
-    print("자동차 개수:", len(indices))
-    # 결과 시각화
-    # for i in indices:
-    #     box = boxes[i]
-    #     x, y, w, h = box
-    #     cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    #     cv2.putText(image, f'Car {i + 1}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-    # 결과 이미지 출력
-    # cv2.imshow("IMAGE",image)
-    # cv2.waitKey(0)
     return len(indices)
 
-#Test
+def get_traffic_status(url):
+    car_count = get_how_many_cars(url)
+
+    if car_count <= 10:
+        print("양호: 교통 흐름이 원활합니다.")
+    elif 10 < car_count <= 20:
+        print("서행: 교통이 다소 혼잡합니다.")
+    else:
+        print("정체: 교통 정체가 예상됩니다.")
+
 if __name__ == "__main__":
-    get_how_many_cars("http://cctvsec.ktict.co.kr:8090/540/xFbPY5jkSvcDdSiuLa2v+SqYOmH39pxfPjptCnjKwClta2qvinkL5zKUt9tjbzrG+JIDOpQZHroIHG/ptnoJ2g==") 
+    get_traffic_status("http://cctvsec.ktict.co.kr:8090/540/xFbPY5jkSvcDdSiuLa2v+SqYOmH39pxfPjptCnjKwClta2qvinkL5zKUt9tjbzrG+JIDOpQZHroIHG/ptnoJ2g==")
