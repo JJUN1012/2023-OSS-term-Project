@@ -54,16 +54,16 @@ def get_how_many_cars(url):
     # 자동차 개수 출력
     print("자동차 개수:", len(indices))
     # 결과 시각화
-    for i in indices:
-        box = boxes[i]
-        x, y, w, h = box
-        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-        cv2.putText(image, f'Car {i + 1}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+    # for i in indices:
+    #     box = boxes[i]
+    #     x, y, w, h = box
+    #     cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    #     cv2.putText(image, f'Car {i + 1}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
     # 결과 이미지 출력
     # cv2.imshow("IMAGE",image)
     # cv2.waitKey(0)
-
+    return len(indices)
 
 #Test
 if __name__ == "__main__":
