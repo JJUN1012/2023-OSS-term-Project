@@ -8,6 +8,11 @@ A mini project using OpenCV for real-time analysis of highway traffic conditions
 - Analyze vehicle density in CCTV videos using OpenCV.
 - Transmit analyzed information to a mobile app for visualizing both the video stream and detected vehicle density.
 
+## Libraries needed
+- python-OpenCV
+- requests
+- numpy
+
 ## How to Use
 
 To use the program:

@@ -10,9 +10,6 @@ Summary:
 '''
 
 import requests
-import numpy as np
-import cv2
-import json
 import xml.etree.ElementTree as ET
 
 
