@@ -10,9 +10,6 @@ Summary:
 '''
 
 import requests
-import numpy as np
-import cv2
-import json
 import xml.etree.ElementTree as ET
 
 
@@ -42,7 +39,7 @@ def get_cctv_lists():
     #API call
     api_call = 'https://openapi.its.go.kr:9443/cctvInfo?'\
         'apiKey=' + api_key +\
-        '&type=ex&cctvType=1'\
+        '&type=ex&cctvType=2'\
         '&minX='+ str(minX) +\
         '&maxX='+ str(maxX) +\
         '&minY='+ str(minY) +\

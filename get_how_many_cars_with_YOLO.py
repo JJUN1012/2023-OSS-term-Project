@@ -129,8 +129,10 @@ def get_how_many_cars(url):
         cv2.putText(image, f'Car {i + 1}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
     # 결과 이미지 출력
-    cv2.imshow("IMAGE",image)
-    cv2.waitKey(0)
+    # cv2.imshow("IMAGE",image)
+    # cv2.waitKey(0)
 
+
+#Test
 if __name__ == "__main__":
     get_how_many_cars("http://cctvsec.ktict.co.kr:8090/540/xFbPY5jkSvcDdSiuLa2v+SqYOmH39pxfPjptCnjKwClta2qvinkL5zKUt9tjbzrG+JIDOpQZHroIHG/ptnoJ2g==")
