@@ -29,14 +29,15 @@ return:
     -1: fail
 '''
 def get_cctv_lists():
-    minX = 125
-    maxX = 129
-    minY = 33
-    maxY = 39
+    minX = 127.1000
+    maxX = 127.1399
+    minY = 37.4321
+    maxY = 37.4575
+
     
-    with open("datafiles/apiKey.txt", 'r',errors='ignore' ) as f:
-        api_key = f.readline()
-   
+    f = open("datafiles/apiKey.txt", 'r')
+    api_key = f.readline()
+    f.close()
     
     #API call
     api_call = 'https://openapi.its.go.kr:9443/cctvInfo?'\
@@ -46,22 +47,16 @@ def get_cctv_lists():
         '&maxX='+ str(maxX) +\
         '&minY='+ str(minY) +\
         '&maxY='+ str(maxY) +\
-        '&getType=json'
+        '&getType=xml'
     
     response = requests.get(api_call)
     
     try:
         # Try to parse the response as XML
-        root = ET.fromstring(response.content)
+        root = ET.fromstring(response.text)
     except ET.ParseError:
         print(f"Failed to parse XML from response: {response.text}")
         return -1
-    # Here's a modified version of your code that prints a more detailed error message when the API key is invalid
-    if 'header' in root:
-        header = root.find('header')
-        if 'resultCode' in header and header.find('resultCode').text == '4005':
-            print("Invalid API key. Please check your API key.")
-            return -1
 
     # Find all 'data' children within 'response'
     data_elements = root.findall('data')
