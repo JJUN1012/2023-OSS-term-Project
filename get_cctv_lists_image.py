@@ -78,7 +78,7 @@ def get_cctv_lists():
     
 
     try:
-        with open("datafiles/cctv_lists.txt", 'w') as f:
+        with open("datafiles/cctv_lists.txt", 'w', encoding= "UTF-8") as f:
             for index, data in enumerate(cctv_lists):
                 cctv_data = (cctv_lists[index]['cctvname'], float(cctv_lists[index]['coordy']), float(cctv_lists[index]['coordx']), cctv_lists[index]['cctvurl'])
                 f.write(str(cctv_data) + "\n")
