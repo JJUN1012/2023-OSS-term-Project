@@ -25,12 +25,7 @@ return:
     0: success
     -1: fail
 '''
-def get_cctv_lists():
-    minX = 127.1000
-    maxX = 127.1399
-    minY = 37.4321
-    maxY = 37.4575
-
+def get_cctv_lists(minX, maxX, minY, maxY):
     
     f = open("datafiles/apiKey.txt", 'r')
     api_key = f.readline()
@@ -85,7 +80,11 @@ def get_cctv_lists():
     return 0
 
 if __name__ == "__main__":
-    value = get_cctv_lists()
+    minX = 127.1000
+    maxX = 127.1399
+    minY = 37.4321
+    maxY = 37.4575
+    value = get_cctv_lists(minX, maxX, minY, maxY)
     if(value == -1):
         print("Failed to get cctv lists")
     else:
