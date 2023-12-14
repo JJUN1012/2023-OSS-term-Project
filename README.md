@@ -19,8 +19,10 @@ A mini project using OpenCV for real-time analysis of highway traffic conditions
 To use the program:
 
 1. Obtain an API key by following the [API application process](https://www.its.go.kr/user/issueAuthKey?service=OPD_00000003).
-2. Create an "apiKey.txt" file in the `datafiles` folder.
-3. Paste the API key into the "apiKey.txt" file.
+2. if you want to change location, chaeck minX, maxX, minY, maxY in main.py
+3. execute main.py and input api key.
+4. select index of CCTV that you want
+5. get data and exit the video with pressing 'Q'
 
 During testing, you can use 'test' as a placeholder for the API key.
 
@@ -41,6 +43,8 @@ Obtain the API key by specifying the purpose, usage, and desired services.
 The program responds with user-friendly messages such as "Highway congestion detected" or "Traffic is smooth, proceed at a moderate speed."
 
 ## Project Progress
+
+
 The process of the program 
 ---
 
@@ -48,8 +52,6 @@ The process of the program
 2. Secondly, the information received through the code is analyzed using opencv.
 3. Third, according to the analysis, the concentration of vehicles in the place is checked and the degree of traffic congestion is notified through the output of the phrase
 4. Increase the convenience of using the highway.
-
----
 
 ## Contributing
 
