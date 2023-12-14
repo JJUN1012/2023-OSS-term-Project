@@ -50,11 +50,11 @@ for index, data in enumerate(cctv_lists):
     name = cctv_lists[index].split(',')[0][2:-1]
     print(f"{index}: {name}")
 
-selected_cctv = int(input("\nselect cctv index: "))
+selected_cctv = int(input("\n원하는 CCTV의 번호를 입력하세요: "))
 try:
     selected_cctv_name = cctv_lists[selected_cctv].split(',')[0][2:-1]
 except:
-    print("invalid index")
+    print("존재하지 않는 CCTV 번호입니다.")
     exit()
 selected_cctv_url = cctv_lists[selected_cctv].split(',')[3][2:-3]
 selected_cctv_video_url = cctv_lists_video[selected_cctv].split(',')[3][2:-3]
