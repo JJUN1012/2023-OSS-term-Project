@@ -54,7 +54,7 @@ def get_cctv_lists(minX, maxX, minY, maxY):
     data_elements = root.findall('data')
     if not data_elements:
         print("No 'data' elements found in 'response'")
-        return -1
+        return -2
 
     # Convert the 'data' elements into a list of dictionaries
     cctv_lists = []
