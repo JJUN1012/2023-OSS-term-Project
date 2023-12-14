@@ -65,4 +65,4 @@ def get_how_many_cars(url):
 
 #Test
 if __name__ == "__main__":
-    get_how_many_cars("http://cctvsec.ktict.co.kr:8090/96/CNSuJA48tYhl9Oyl+N9pheZ8cXa0AmSMVZR2+7CbkHwmLSUn2CJsoKQUlP8jUeDmQxhLE7hbxCz9s0Y/mLVSHw==")
+    get_how_many_cars("http://cctvsec.ktict.co.kr:8090/18/IOd8QeDX9z1ZfoUzd3iohahB19J8Z0PntWecI6NHe9bN/8wawDiqUxFukQVuMCitwtu4DZ7s+hv+pt4i/KVNnQ==")
