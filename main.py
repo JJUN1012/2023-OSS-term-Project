@@ -2,12 +2,15 @@ import get_cctv_lists_image as gcli
 import get_cctv_lists_video as gclv
 import get_traffic_status as gts
 import open_video as ov
+import os
+import asciiart as aa
 
 minX = 127.0
 maxX = 127.4
 minY = 37.3
 maxY = 37.6
 
+aa.aaprint();
 try:
     fp = open("datafiles/apiKey.txt", 'r')
     print("api key file found")
@@ -15,24 +18,27 @@ try:
     result = gcli.get_cctv_lists(minX, maxX, minY, maxY)
     if(result == -2):
         print("invalid api key")
+        os.remove("datafiles/apiKey.txt")
         fp.close()
         exit()
+    print("Please wait a moment...")
     gclv.get_cctv_video_list(minX, maxX, minY, maxY)
     print("Get cctv lists success")
     fp.close()
 except:
     print("api key file not found")
-    fp = open("datafiles/apiKey.txt", 'w')
+    fp = open("datafiles/apiKey.txt", 'w', encoding= "UTF-8")
     api_key = input("input api key: ")
+    fp.write(api_key)
+    fp.close()
     result = gcli.get_cctv_lists(minX, maxX, minY, maxY)
     if(result == -2):
         print("invalid api key")
-        fp.close()
+        os.remove("datafiles/apiKey.txt")
         exit()
-    fp.write(api_key)
+    print("Please wait a moment...")
     gclv.get_cctv_video_list(minX, maxX, minY, maxY)
     print("Get cctv lists success")
-    fp.close()
 
 fp = open("datafiles/cctv_lists.txt", 'r', encoding= "UTF-8")
 cctv_lists = fp.readlines()
@@ -45,7 +51,11 @@ for index, data in enumerate(cctv_lists):
     print(f"{index}: {name}")
 
 selected_cctv = int(input("select cctv index: "))
-selected_cctv_name = cctv_lists[selected_cctv].split(',')[0][2:-1]
+try:
+    selected_cctv_name = cctv_lists[selected_cctv].split(',')[0][2:-1]
+except:
+    print("invalid index")
+    exit()
 selected_cctv_url = cctv_lists[selected_cctv].split(',')[3][2:-3]
 selected_cctv_video_url = cctv_lists_video[selected_cctv].split(',')[3][2:-3]
 print(f"selected cctv: {selected_cctv_name}")
