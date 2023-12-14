@@ -52,7 +52,7 @@ def get_how_many_cars(url):
     indices = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, 0.4)
 
     # 자동차 개수 출력
-    print("자동차 개수:", len(indices))
+    print("자동차 수:", len(indices))
     # 결과 이미지 출력
     # for i in indices:
     #     box = boxes[i]
