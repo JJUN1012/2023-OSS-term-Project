@@ -50,7 +50,7 @@ for index, data in enumerate(cctv_lists):
     name = cctv_lists[index].split(',')[0][2:-1]
     print(f"{index}: {name}")
 
-selected_cctv = int(input("select cctv index: "))
+selected_cctv = int(input("\nselect cctv index: "))
 try:
     selected_cctv_name = cctv_lists[selected_cctv].split(',')[0][2:-1]
 except:
