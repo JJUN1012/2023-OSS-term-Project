@@ -27,7 +27,7 @@ def get_how_many_cars(url):
     outs = net.forward(layer_names)
 
     # 감지된 객체의 정보 추출
-    conf_threshold = 0.5
+    conf_threshold = 0.45
     class_ids = []
     confidences = []
     boxes = []
@@ -53,18 +53,16 @@ def get_how_many_cars(url):
 
     # 자동차 개수 출력
     print("자동차 개수:", len(indices))
-    # 결과 시각화
+    # 결과 이미지 출력
     # for i in indices:
     #     box = boxes[i]
     #     x, y, w, h = box
     #     cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
     #     cv2.putText(image, f'Car {i + 1}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-    # 결과 이미지 출력
     # cv2.imshow("IMAGE",image)
     # cv2.waitKey(0)
     return len(indices)
 
 #Test
 if __name__ == "__main__":
-    get_how_many_cars("http://cctvsec.ktict.co.kr:8090/540/xFbPY5jkSvcDdSiuLa2v+SqYOmH39pxfPjptCnjKwClta2qvinkL5zKUt9tjbzrG+JIDOpQZHroIHG/ptnoJ2g==") 
+    get_how_many_cars("http://cctvsec.ktict.co.kr:8090/18/IOd8QeDX9z1ZfoUzd3iohahB19J8Z0PntWecI6NHe9bN/8wawDiqUxFukQVuMCitwtu4DZ7s+hv+pt4i/KVNnQ==")

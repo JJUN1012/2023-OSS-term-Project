@@ -12,6 +12,7 @@ A mini project using OpenCV for real-time analysis of highway traffic conditions
 - python-OpenCV
 - requests
 - numpy
+- asciimatics
 
 ## How to Use
 
