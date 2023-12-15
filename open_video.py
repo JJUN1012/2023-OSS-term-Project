@@ -2,7 +2,7 @@ import cv2
 
 def open_video(url):
     cap = cv2.VideoCapture(url)
-    print("Q를 눌러 영상을 종료할 수 있습니다.")
+    print("You can exit the image by pressing Q.")
     while True:
         ret, frame = cap.read()
         if not ret:

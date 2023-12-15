@@ -3,30 +3,30 @@ import numpy as np
 import urllib.request
 
 def get_how_many_cars(url):
-    # YOLO 모델 로드
+    # YOLO model road
     net = cv2.dnn.readNet("datafiles/yolov3.weights", "datafiles/yolov3.cfg")
     layer_names = net.getUnconnectedOutLayersNames()
 
-    # 클래스의 목록
+    # List of class
     classes = []
     with open("datafiles/coco.names", "r") as f:
         classes = [line.strip() for line in f]
-    #input url
+    # Input url
 
     urllib.request.urlretrieve(url, "datafiles/local_image.jpg")
 
-    # 이미지 로드
+    # Image road
     image = cv2.imread("datafiles/local_image.jpg")
     height, width, _ = image.shape
 
-    # 이미지 전처리 및 모델 입력 설정
+    # Description of pre-image processing and model input
     blob = cv2.dnn.blobFromImage(image, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
     net.setInput(blob)
 
-    # YOLO 객체 감지 수행
+    # Perform yolo object detection
     outs = net.forward(layer_names)
 
-    # 감지된 객체의 정보 추출
+    # Extracting information from detected objects
     conf_threshold = 0.45
     class_ids = []
     confidences = []
@@ -48,12 +48,12 @@ def get_how_many_cars(url):
                 confidences.append(float(confidence))
                 boxes.append([x, y, w, h])
 
-    # 겹치는 박스 제거 (Non-maximum suppression)
+    # Remove Overlapping Boxes (Non-maximum suppression)
     indices = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, 0.4)
 
-    # 자동차 개수 출력
-    print("자동차 수:", len(indices))
-    # 결과 이미지 출력
+    # Number of cars output
+    print("Number of cars:", len(indices))
+    # Output of the resulting image
     # for i in indices:
     #     box = boxes[i]
     #     x, y, w, h = box
